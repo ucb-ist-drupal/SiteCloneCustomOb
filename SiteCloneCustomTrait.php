@@ -128,7 +128,7 @@ function _openberkeley_dns() {
     // some sites have crufty data. attempt to clean it up.
     $old_paths = str_replace('\nhttp', "\nhttp", $old_paths);
     $old_paths = str_replace('\r\nhttp', "\nhttp", $old_paths);
-    //$old_paths = str_replace("\r\nhttp", "\nhttp", $old_paths);
+    $old_paths = str_replace('\r', "", $old_paths);
 
     // prepend new paths to old with new line.
     $paths = "$new_paths\n$old_paths";
